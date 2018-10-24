@@ -273,6 +273,7 @@ Options:\n\
 			monero      XMR cryptonight (v7)\n\
 			neoscrypt   FeatherCoin, Phoenix, UFO...\n\
 			nist5       NIST5 (TalkCoin)\n\
+			parallax	Parallax (Nodescape)\n\
 			penta       Pentablake hash (5x Blake 512)\n\
 			phi1612     LUX initial algo, for Seraph\n\
 			phi2        LUX v2 with lyra2\n\
@@ -2562,6 +2563,9 @@ static void *miner_thread(void *userdata)
 		case ALGO_X16R:
 			rc = scanhash_x16r(thr_id, &work, max_nonce, &hashes_done);
 			break;
+		case ALGO_PARALLAX:
+			rc = scanhash_parallax(thr_id, &work, max_nonce, &hashes_done);
+			break;
 		case ALGO_X16S:
 			rc = scanhash_x16s(thr_id, &work, max_nonce, &hashes_done);
 			break;
@@ -3958,7 +3962,8 @@ int main(int argc, char *argv[])
 #endif
 			CUDART_VERSION/1000, (CUDART_VERSION % 1000)/10, arch);
 		printf("  Originally based on Christian Buchner and Christian H. project\n");
-		printf("  Include some kernels from alexis78, djm34, djEzo, tsiv and krnlx.\n\n");
+		printf("  Includes some kernels from alexis78, djm34, djEzo, tsiv and krnlx.\n\n");
+		printf("  Parallax algo by Nodescape\n\n");
 		printf("BTC donation address: 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo (tpruvot)\n\n");
 	}
 
