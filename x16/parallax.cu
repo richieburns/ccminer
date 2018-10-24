@@ -200,7 +200,7 @@ extern "C" int scanhash_parallax(int thr_id, struct work* work, uint32_t max_non
 	// uint32_t ntime = swab32(pdata[17]);
 	getView(&endiandata[1], pView);
 
-	if (opt_debug && !thr_id) applog(LOG_DEBUG, "View %i, %i, %i, %i, %i, %i, %i, %i, %i (%08x)", pView[0], pView[1], pView[2], pView[3], pView[4], pView[5], pView[6], pView[7], pView[8], ntime);
+	if (opt_debug && !thr_id) applog(LOG_DEBUG, "View %i, %i, %i, %i, %i, %i, %i, %i, %i", pView[0], pView[1], pView[2], pView[3], pView[4], pView[5], pView[6], pView[7], pView[8]);
 
 	cuda_check_cpu_setTarget(ptarget);
 
